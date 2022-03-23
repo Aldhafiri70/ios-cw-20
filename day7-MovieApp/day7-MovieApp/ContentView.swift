@@ -10,13 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var moivees = ["Venom","Venom","Venom"]
     var body: some View {
+        NavigationView{
         List(moivees, id:\.self){movies in
-        HStack{
+            HStack{
+                NavigationLink(destination:detailsView()){
             Image("V1").resizable().scaledToFit().clipShape(Circle()).frame( height: 120)
+                }
             Text(movies)
+        
         }
-      
-          
+        }
     }
 }
 }
